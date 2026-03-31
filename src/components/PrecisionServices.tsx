@@ -23,13 +23,13 @@ const principles = [
 export default function PrecisionServices() {
   return (
     <section id="studio" className="surface-section section-padding rounded-[4rem]">
-      <div className="flex flex-col items-center text-center mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+      <div className="flex flex-col items-center text-center mb-16 md:mb-24 animate-in fade-in slide-in-from-bottom-8 duration-1000">
         <span className="label-md">The Studio Philosophy</span>
-        <h2 className="text-4xl md:text-8xl font-black italic uppercase tracking-tighter leading-none mb-8">
+        <h2 className="display-lg mb-8">
           No clients. <br />
           <span className="text-gradient-primary">Just creation.</span>
         </h2>
-        <p className="text-on-surface-variant text-xl md:text-3xl max-w-2xl font-medium">
+        <p className="text-on-surface-variant text-xl md:text-3xl max-w-2xl">
           We don&apos;t build apps for other companies. <br />
           <span className="text-white">We build the ones we believe should exist.</span>
         </p>

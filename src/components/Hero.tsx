@@ -16,18 +16,18 @@ export default function Hero() {
             Product Studio v2.0
           </div>
           
-          <div className="relative w-[180px] h-[180px] mb-12 animate-float">
+          <div className="relative w-[200px] h-[200px] mb-12 animate-float">
             <Image 
               src="/assets/SmartFuze logo_02.png" 
               alt="SmartFuze Brain Bomb" 
               fill 
-              sizes="180px"
+              sizes="200px"
               className="object-contain"
               priority
             />
           </div>
           
-          <h1 className="text-5xl md:text-[8rem] font-black italic uppercase tracking-tighter leading-[0.85] mb-12">
+          <h1 className="display-lg mb-12">
             We light the <br />
             <span className="text-gradient-primary">fuze on <br className="md:hidden" /> smart ideas.</span>
           </h1>

@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: 'swap',
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: ['400'],
+  subsets: ["latin"],
+  variable: "--font-bebas",
   display: 'swap',
 });
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body 
-        className={`${plusJakartaSans.variable} font-sans antialiased selection:bg-primary/30 text-white bg-background`}
+        className={`${plusJakartaSans.variable} ${bebasNeue.variable} font-sans antialiased selection:bg-primary/30 text-white bg-background`}
         suppressHydrationWarning
       >
         <script

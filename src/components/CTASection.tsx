@@ -11,16 +11,16 @@ export default function CTASection() {
         <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full" />
         
         <div className="relative z-10 max-w-4xl mx-auto space-y-12">
-            <h2 className="text-4xl md:text-[8rem] font-black italic uppercase tracking-tighter leading-[0.85]">
+            <h2 className="display-lg">
               Have a smart <br />
               <span className="text-gradient-primary">Idea?</span>
             </h2>
-            <p className="text-on-surface-variant text-xl md:text-3xl font-medium leading-relaxed">
+            <p className="text-on-surface-variant text-xl md:text-3xl leading-relaxed">
               We&apos;re always looking for the next niche to disrupt. <br />
               Let&apos;s talk about building something that matters.
             </p>
             <div className="flex justify-center pt-8">
-               <button className="btn-primary !px-20 !py-8 text-sm group">
+               <button className="btn-primary !px-20 !py-8 font-bebas text-lg group">
                   Get Ignited
                   <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                </button>

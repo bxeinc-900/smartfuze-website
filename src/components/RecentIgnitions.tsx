@@ -23,15 +23,15 @@ const apps = [
 export default function RecentIgnitions() {
   return (
     <section id="ignitions" className="void-section section-padding">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-32">
-        <div className="space-y-4">
-          <span className="label-md">The Portfolio</span>
-          <h2 className="text-4xl md:text-8xl font-black italic uppercase tracking-tighter leading-none">
-            Recent <br />
-            <span className="text-gradient-primary">Ignitions.</span>
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-24">
+        <div className="flex flex-col items-start gap-4">
+          <span className="label-md">Recent Ignitions</span>
+          <h2 className="display-lg">
+            The apps we <br />
+            <span className="text-gradient-primary">brought to life.</span>
           </h2>
         </div>
-        <p className="text-on-surface-variant text-lg md:text-xl max-w-md font-medium">
+        <p className="text-on-surface-variant text-lg md:text-xl max-w-sm">
           A small selection of the products we&apos;ve built, launched, and own. 
         </p>
       </div>
