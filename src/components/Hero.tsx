@@ -28,7 +28,7 @@ export default function Hero() {
           
           <h1 className="text-6xl md:text-[10rem] font-black italic uppercase tracking-tighter leading-[0.8] mb-12">
             We light the <br />
-            <span className="text-gradient-brain">Fuze.</span>
+            <span className="text-gradient-brain">fuze on <br className="md:hidden" /> smart ideas.</span>
           </h1>
           
           <p className="text-white/40 text-xl md:text-3xl max-w-2xl mx-auto leading-relaxed mb-16 font-medium">
