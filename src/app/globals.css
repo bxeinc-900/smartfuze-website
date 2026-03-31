@@ -42,15 +42,9 @@
   }
 
   .display-lg {
-    font-size: 3.5rem;
+    font-size: clamp(3rem, 10vw, 8rem);
     line-height: 0.9;
     text-transform: uppercase;
-  }
-
-  @media (min-width: 768px) {
-    .display-lg {
-      font-size: 8rem;
-    }
   }
 
   p {
@@ -60,12 +54,30 @@
 }
 
 @layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 90rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
   /* Kinetic Luminary Components */
   .void-section {
+    width: 100%;
     background-color: var(--color-surface);
   }
   
   .surface-section {
+    width: 100%;
     background-color: var(--color-surface-container-low);
   }
 
@@ -74,8 +86,14 @@
     overflow: hidden;
     background-color: var(--color-surface-container);
     border-radius: 1.5rem;
-    padding: 2.5rem;
+    padding: 2rem;
     transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @media (min-width: 768px) {
+    .glass-card {
+      padding: 2.5rem;
+    }
   }
 
   .glass-card:hover {
@@ -151,19 +169,14 @@
   }
 
   .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    max-width: 90rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .section-padding {
-      padding-top: 15rem;
-      padding-bottom: 15rem;
+      padding-top: 12rem;
+      padding-bottom: 12rem;
     }
   }
 

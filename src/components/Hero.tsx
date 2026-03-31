@@ -10,14 +10,14 @@ export default function Hero() {
       <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/5 blur-[120px] rounded-full animate-pulse-slow" />
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/5 blur-[120px] rounded-full" />
       
-      <div className="container relative z-10 text-center px-6">
+      <div className="container relative z-10 text-center">
         <div className="flex flex-col items-center animate-in fade-in slide-in-from-bottom-12 duration-1000">
-          <div className="relative w-[200px] h-[200px] mb-12 animate-float">
+          <div className="relative w-[150px] h-[150px] md:w-[200px] md:h-[200px] mb-12 animate-float">
             <Image 
               src="/assets/SmartFuze logo_02.png" 
               alt="SmartFuze Brain Bomb" 
               fill 
-              sizes="200px"
+              sizes="(max-width: 768px) 150px, 200px"
               className="object-contain"
               priority
             />
@@ -28,17 +28,17 @@ export default function Hero() {
             <span className="text-gradient-primary">fuze on <br className="md:hidden" /> smart ideas.</span>
           </h1>
           
-          <p className="text-on-surface-variant text-lg md:text-2xl max-w-2xl mx-auto leading-relaxed mb-16 font-medium">
+          <p className="text-on-surface-variant text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed mb-16 font-medium">
              We build mobile apps that are <br className="hidden md:block" />
              <span className="text-white">fun, useful, and actually smart.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
-            <button className="btn-primary w-full sm:w-auto group">
+            <button className="btn-primary w-full sm:px-12 group">
               View Our Ignitions
               <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
             </button>
-            <button className="btn-glass w-full sm:w-auto">
+            <button className="btn-glass w-full sm:px-12">
               The Philosophy
             </button>
           </div>
