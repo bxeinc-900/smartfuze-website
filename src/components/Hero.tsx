@@ -21,6 +21,7 @@ export default function Hero() {
               src="/assets/SmartFuze logo_02.png" 
               alt="SmartFuze Brain Bomb" 
               fill 
+              sizes="180px"
               className="object-contain"
               priority
             />
