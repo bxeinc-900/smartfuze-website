@@ -68,8 +68,8 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Kinetic Menu Overlay - Moved outside container for true full-screen */}
-      <div className={`fixed inset-0 bg-surface-container/98 backdrop-blur-[60px] z-[100] flex flex-col items-center justify-center transition-all duration-700 md:hidden ${
+      {/* Kinetic Menu Overlay - Solid Void Background for Zero Overlap */}
+      <div className={`fixed inset-0 bg-surface backdrop-blur-[100px] z-[200] flex flex-col items-center justify-center transition-all duration-700 md:hidden ${
         isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
       }`}>
         <div className="flex flex-col items-center gap-12 pt-12">
