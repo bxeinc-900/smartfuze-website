@@ -19,7 +19,7 @@ export default function Footer() {
               <span className="font-black text-xl tracking-tighter uppercase italic">SmartFuze</span>
             </div>
             <p className="text-white/40 text-lg font-medium leading-relaxed">
-              We build mobile apps that are fun, useful, and actually smart. Based in Vancouver, Canada.
+              We build mobile apps that are fun, useful, and actually smart. We own our products from spark to scale.
             </p>
           </div>
 

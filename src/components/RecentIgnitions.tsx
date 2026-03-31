@@ -8,14 +8,14 @@ const apps = [
     title: "VaultX Pro",
     category: "Productivity",
     desc: "The last file manager you'll ever need. Secure, fast, and remarkably simple.",
-    image: "/assets/vaultx_pro.png",
+    image: "/assets/vaultx.png",
     color: "from-brain/20 to-transparent"
   },
   {
     title: "VibeCheck",
     category: "Entertainment",
     desc: "A new way to experience music and mood. Designed for the niche rhythm seeker.",
-    image: "/assets/vibecheck.png",
+    image: "/assets/logo.png",
     color: "from-fuse/20 to-transparent"
   }
 ];
@@ -43,12 +43,14 @@ export default function RecentIgnitions() {
                <div className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10`} />
                <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors z-0" />
                {app.image && (
-                 <Image 
-                   src={app.image}
-                   alt={app.title}
-                   fill
-                   className="object-cover group-hover:scale-105 transition-transform duration-1000 z-5"
-                 />
+                 <div className="relative w-full h-full">
+                    <Image 
+                      src={app.image}
+                      alt={app.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-1000 z-5"
+                    />
+                 </div>
                )}
                <div className="absolute top-6 right-6 z-20">
                     <div className="h-12 w-12 rounded-full glass border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
