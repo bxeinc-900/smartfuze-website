@@ -18,9 +18,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "The Fuse", href: "#the-fuse" },
+    { name: "The Fuse", href: "#architecture" },
     { name: "Capabilities", href: "#capabilities" },
-    { name: "Case Studies", href: "#case-studies" },
+    { name: "Integrations", href: "#integrations" },
   ];
 
   return (

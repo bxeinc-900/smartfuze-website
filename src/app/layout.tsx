@@ -30,9 +30,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SmartFuze AI",
+    "url": "https://smartfuze.com",
+    "logo": "https://smartfuze.com/assets/new SmartFuze logo_03 small.png",
+    "description": "Enterprise-grade data fusion and real-time intelligence engine.",
+    "sameAs": [
+      "https://x.com/smartfuze",
+      "https://github.com/smartfuze",
+      "https://linkedin.com/company/smartfuze"
+    ]
+  };
+
   return (
-    <html lang="en">
-      <body className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${outfit.variable} ${inter.variable} antialiased selection:bg-primary/30`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
