@@ -27,7 +27,7 @@ export default function Navbar() {
     }`}>
       <div className="container flex items-center justify-between">
         {/* Animated Logo */}
-        <Link href="/" className="flex items-center gap-3 group z-50">
+        <Link href="/" className="flex items-center gap-3 group z-[60]">
           <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-500">
             <Image
               src="/assets/SmartFuze logo_02.png"
@@ -60,23 +60,26 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden z-50 p-2 text-white/60 hover:text-white transition-colors"
+          className="md:hidden z-[110] p-4 -mr-4 text-white/60 hover:text-white transition-colors"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle Menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
+      </div>
 
-        {/* Kinetic Menu Overlay */}
-        <div className={`fixed inset-0 bg-surface-container/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-12 transition-all duration-700 md:hidden ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-        }`}>
+      {/* Kinetic Menu Overlay - Moved outside container for true full-screen */}
+      <div className={`fixed inset-0 bg-surface-container/98 backdrop-blur-[60px] z-[100] flex flex-col items-center justify-center transition-all duration-700 md:hidden ${
+        isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+      }`}>
+        <div className="flex flex-col items-center gap-12 pt-12">
           {navLinks.map((link, i) => (
             <Link 
               key={link.name} 
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-4xl font-black uppercase italic tracking-tighter hover:text-gradient-primary transition-colors"
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className="text-5xl font-black uppercase italic tracking-tighter hover:text-gradient-primary transition-all duration-300"
+              style={{ transitionDelay: `${i * 75}ms` }}
             >
               {link.name}
             </Link>
@@ -84,10 +87,20 @@ export default function Navbar() {
           <Link 
             href="#contact" 
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black uppercase tracking-widest text-tertiary"
+            className="text-2xl font-black uppercase tracking-widest text-tertiary mt-8 border-b-2 border-tertiary/20 pb-2"
           >
             Get Ignited
           </Link>
+        </div>
+
+        {/* Bottom Metadata for Premium Look */}
+        <div className="absolute bottom-16 left-0 right-0 flex flex-col items-center gap-6">
+          <div className="flex gap-8 text-[10px] font-black uppercase tracking-[0.4em] text-on-surface-variant">
+            <a href="#" className="hover:text-white transition-colors">Instagram</a>
+            <a href="#" className="hover:text-white transition-colors">X</a>
+            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+          </div>
+          <span className="text-[8px] font-black uppercase tracking-[0.5em] text-white/10 italic">Handle with care</span>
         </div>
       </div>
     </nav>
