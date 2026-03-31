@@ -1,15 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 const apps = [
   {
-    title: "VaultX Pro",
-    category: "Productivity",
-    desc: "The last file manager you'll ever need. Secure, fast, and remarkably simple.",
-    image: "/assets/vaultx.png",
-    color: "from-primary/20 to-transparent"
+    title: "Celiac Scanner",
+    category: "Health & Fitness",
+    desc: "The only AI-powered digital guardian for gluten-free living. Cross-referencing 30+ medical authorities in real-time.",
+    image: "https://celiac-scanner-website.vercel.app/_next/image?url=%2Fmockups_person%2Fscanner.png&w=1080&q=75",
+    color: "from-primary/20 to-transparent",
+    href: "/celiac-scanner"
   },
   {
     title: "VibeCheck",
@@ -38,7 +40,7 @@ export default function RecentIgnitions() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {apps.map((app, i) => (
-          <div key={i} className="glass-card group cursor-pointer flex flex-col p-6 md:p-8">
+          <Link href={app.href || "#"} key={i} className="glass-card group cursor-pointer flex flex-col p-6 md:p-8">
             <div className="relative aspect-[16/10] mb-8 overflow-hidden rounded-[1.5rem]">
                <div className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10`} />
                <div className="absolute inset-0 bg-surface-variant/40 group-hover:bg-transparent transition-colors z-0" />
@@ -60,17 +62,17 @@ export default function RecentIgnitions() {
             </div>
             
             <div className="space-y-4 mt-auto">
-               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-tertiary">
+               <span className="text-[10px] font-bebas uppercase tracking-[0.4em] text-tertiary">
                  {app.category}
                </span>
-               <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">
+               <h3 className="text-3xl md:text-5xl font-bebas uppercase tracking-tighter">
                  {app.title}
                </h3>
-               <p className="text-on-surface-variant text-lg leading-relaxed font-medium group-hover:text-white transition-colors duration-500">
+               <p className="text-on-surface-variant text-lg leading-relaxed group-hover:text-white transition-colors duration-500">
                  {app.desc}
                </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
