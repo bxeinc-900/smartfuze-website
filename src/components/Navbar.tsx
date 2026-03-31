@@ -69,10 +69,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Kinetic Menu Overlay - Solid Hex Background for Zero Bleed-through */}
-      <div className={`fixed inset-0 bg-[#121212] z-[200] flex flex-col items-center justify-center transition-all duration-700 md:hidden ${
-        isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-      }`}>
+      {/* Kinetic Menu Overlay - Forced Solid Background */}
+      <div 
+        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center transition-all duration-700 md:hidden ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        }`}
+        style={{ backgroundColor: '#121212' }}
+      >
         {/* Ambient Glow for Depth */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
