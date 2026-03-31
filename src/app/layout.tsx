@@ -13,15 +13,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SmartFuze | The Future of Data Fusion",
-  description: "Seamlessly integrate, visualize, and harness your most complex data streams with SmartFuze's next-level intelligence engine.",
-  keywords: ["data fusion", "AI intelligence", "data visualization", "enterprise data", "SmartFuze"],
+  title: "SmartFuze | Lighting the fuze on smart ideas",
+  description: "SmartFuze is a mobile app studio that builds its own products. We operate at the intersection of creativity, technology, and execution to build apps we believe should exist.",
+  keywords: ["SmartFuze", "mobile app studio", "app development", "product studio", "creative technology"],
   openGraph: {
-    title: "SmartFuze | The Future of Data Fusion",
-    description: "The next-level intelligence engine for complex data streams.",
+    title: "SmartFuze | Lighting the fuze on smart ideas",
+    description: "Built to spark something bigger. We build the apps we believe should exist.",
     type: "website",
     url: "https://smartfuze.com",
-    images: ["/assets/og-image.png"],
+    images: ["/assets/SmartFuze logo_02.png"],
   },
 };
 
@@ -33,10 +33,10 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "SmartFuze AI",
+    "name": "SmartFuze",
     "url": "https://smartfuze.com",
-    "logo": "https://smartfuze.com/assets/new SmartFuze logo_03 small.png",
-    "description": "Enterprise-grade data fusion and real-time intelligence engine.",
+    "logo": "https://smartfuze.com/assets/SmartFuze logo_02.png",
+    "description": "A creative mobile app studio that builds its own products in Food & Drink, Health & Fitness, and Productivity.",
     "sameAs": [
       "https://x.com/smartfuze",
       "https://github.com/smartfuze",
