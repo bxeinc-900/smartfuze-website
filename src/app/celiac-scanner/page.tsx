@@ -117,7 +117,7 @@ export default function CeliacScanner() {
             <div className="relative aspect-square lg:order-2">
                <div className="absolute inset-0 bg-primary/10 blur-[120px] rounded-full" />
                <Image 
-                 src="https://celiac-scanner-website.vercel.app/_next/image?url=%2Fmockups_person%2Fscan.png&w=1080&q=75"
+                 src="/assets/restaurant-finder.webp"
                  alt="Restaurant Menu Scanning"
                  fill
                  className="object-contain"
