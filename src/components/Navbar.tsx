@@ -49,7 +49,6 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-bebas text-2xl tracking-tighter uppercase leading-none group-hover:text-gradient-primary transition-all duration-500">SmartFuze</span>
-              <span className="text-[7px] font-black uppercase tracking-[0.5em] text-tertiary leading-none mt-1">Product Studio</span>
             </div>
           </Link>
 

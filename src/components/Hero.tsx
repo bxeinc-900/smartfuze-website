@@ -12,10 +12,6 @@ export default function Hero() {
       
       <div className="container relative z-10 text-center px-6">
         <div className="flex flex-col items-center animate-in fade-in slide-in-from-bottom-12 duration-1000">
-          <div className="label-md">
-            Product Studio v2.0
-          </div>
-          
           <div className="relative w-[200px] h-[200px] mb-12 animate-float">
             <Image 
               src="/assets/SmartFuze logo_02.png" 
