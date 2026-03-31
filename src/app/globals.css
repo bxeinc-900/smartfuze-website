@@ -1,49 +1,51 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2d5bff;
+  --color-primary-glow: rgba(45, 91, 255, 0.4);
+  --color-accent: #d25bff;
+  --color-background: #0a0a0a;
+  
+  --font-outfit: var(--font-outfit);
+  --font-inter: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply box-border p-0 m-0;
+  }
+  
+  html,
+  body {
+    @apply max-w-full overflow-x-hidden bg-background text-white;
+    font-family: var(--font-outfit), var(--font-inter), sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: "";
+    @apply fixed top-0 left-0 w-full h-full z-[-1] pointer-events-none;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(45, 91, 255, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(210, 91, 255, 0.03) 0%, transparent 40%);
   }
 }
 
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/5;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-full font-semibold shadow-[0_0_20px_var(--color-primary-glow)] inline-flex items-center gap-2 transition-all hover:brightness-110 hover:shadow-[0_0_30px_var(--color-primary-glow)];
+  }
+  
+  .btn-secondary {
+    @apply bg-white/5 border border-white/5 text-white px-6 py-3 rounded-full font-semibold transition-all hover:bg-white/10;
+  }
+  
+  .container {
+    @apply max-w-[1200px] mx-auto px-8 md:px-12;
   }
 }

@@ -67,4 +67,4 @@ When this skill is activated, follow these expert-level steps:
 
 * **No Generic Templates:** Avoid "lorem ipsum" where possible; suggest industry-relevant placeholder copy.
 * **No Bloat:** Do not include unnecessary third-party libraries; prioritize native CSS/Tailwind solutions.
-* **Security:** Ensure all contact forms include basic validation and protection against common vulnerabilities.
+* **Deployment:** Anytime a change or update is made to any of the pages, immediately push the changes to GitHub to trigger the Vercel deployment and make the updates live.
