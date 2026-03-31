@@ -22,33 +22,33 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? "py-4 bg-black/40 backdrop-blur-xl border-b border-white/5" : "py-8 bg-transparent"
+    <nav className={`glass-nav h-24 flex items-center transition-all duration-700 ${
+      scrolled ? "bg-surface-container/80 shadow-2xl" : "bg-transparent"
     }`}>
       <div className="container flex items-center justify-between">
-        {/* Logo */}
+        {/* Animated Logo */}
         <Link href="/" className="flex items-center gap-3 group z-50">
           <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-500">
             <Image
-              src="/assets/logo.png"
+              src="/assets/SmartFuze logo_02.png"
               alt="SmartFuze Logo"
               fill
               className="object-contain"
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl tracking-tighter uppercase italic leading-none">SmartFuze</span>
-            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-spark leading-none mt-1">Product Studio</span>
+            <span className="font-black text-xl tracking-tighter uppercase italic leading-none group-hover:text-gradient-primary transition-all duration-500">SmartFuze</span>
+            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-tertiary leading-none mt-1">Product Studio</span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Studio-Grade Nav */}
         <div className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors"
+              className="text-[10px] font-black uppercase tracking-[0.3em] text-on-surface-variant hover:text-white transition-colors"
             >
               {link.name}
             </Link>
@@ -66,8 +66,8 @@ export default function Navbar() {
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-12 transition-all duration-700 md:hidden ${
+        {/* Kinetic Menu Overlay */}
+        <div className={`fixed inset-0 bg-surface-container/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-12 transition-all duration-700 md:hidden ${
           isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}>
           {navLinks.map((link, i) => (
@@ -75,7 +75,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-4xl font-black uppercase italic tracking-tighter hover:text-brain transition-colors"
+              className="text-4xl font-black uppercase italic tracking-tighter hover:text-gradient-primary transition-colors"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {link.name}
@@ -84,7 +84,7 @@ export default function Navbar() {
           <Link 
             href="#contact" 
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black uppercase tracking-widest text-spark"
+            className="text-2xl font-black uppercase tracking-widest text-tertiary"
           >
             Get Ignited
           </Link>

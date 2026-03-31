@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jakarta",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "SmartFuze | Lighting the fuze on smart ideas",
-  description: "SmartFuze is a mobile app studio that builds its own products. We operate at the intersection of creativity, technology, and execution to build apps we believe should exist.",
-  keywords: ["SmartFuze", "mobile app studio", "app development", "product studio", "creative technology"],
+  title: "SmartFuze | We light the fuze on smart ideas",
+  description: "SmartFuze is a premium product studio building mobile apps that are fun, useful, and actually smart. We own our products from spark to scale.",
+  keywords: ["SmartFuze", "product studio", "mobile app studio", "creative technology", "app engineering"],
   openGraph: {
-    title: "SmartFuze | Lighting the fuze on smart ideas",
+    title: "SmartFuze | We light the fuze on smart ideas",
     description: "Built to spark something bigger. We build the apps we believe should exist.",
     type: "website",
     url: "https://smartfuze.com",
@@ -36,7 +32,7 @@ export default function RootLayout({
     "name": "SmartFuze",
     "url": "https://smartfuze.com",
     "logo": "https://smartfuze.com/assets/SmartFuze logo_02.png",
-    "description": "A creative mobile app studio that builds its own products in Food & Drink, Health & Fitness, and Productivity.",
+    "description": "A premium product studio that builds its own products in Food & Drink, Health & Fitness, and Productivity.",
     "sameAs": [
       "https://x.com/smartfuze",
       "https://github.com/smartfuze",
@@ -46,7 +42,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${outfit.variable} ${inter.variable} antialiased selection:bg-primary/30`}>
+      <body className={`${plusJakartaSans.variable} font-sans antialiased selection:bg-primary/30 text-white bg-background`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
