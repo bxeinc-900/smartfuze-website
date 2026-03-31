@@ -1,119 +1,85 @@
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+"use client";
 
-const ignitions = [
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+
+const apps = [
   {
-    name: "VaultX Pro",
-    tag: "FinTech",
-    desc: "The next generation of decentralized finance management. Secure, fast, and highly explosive.",
-    image: "/assets/vaultx.png",
-    featured: true,
+    title: "VaultX Pro",
+    category: "Productivity",
+    desc: "The last file manager you'll ever need. Secure, fast, and remarkably simple.",
+    image: "/assets/vaultx_pro.png",
     color: "from-brain/20 to-transparent"
   },
   {
-    name: "VibeCheck",
-    tag: "Social",
-    desc: "A mood-first social experience designed for the next generation.",
-    image: null,
-    featured: false,
+    title: "VibeCheck",
+    category: "Entertainment",
+    desc: "A new way to experience music and mood. Designed for the niche rhythm seeker.",
+    image: "/assets/vibecheck.png",
     color: "from-fuse/20 to-transparent"
-  },
-  {
-    name: "PulseFlow",
-    tag: "Health",
-    desc: "Real-time biometric insights for elite performance.",
-    image: null,
-    featured: false,
-    color: "from-spark/20 to-transparent"
   }
 ];
 
 export default function RecentIgnitions() {
   return (
-    <section id="ignitions" className="py-24 md:py-48 relative overflow-hidden">
-      <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <div className="space-y-4">
-            <span className="section-subtitle">Portfolio</span>
-            <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
-              Recent <br />
-              <span className="text-gradient-brain">Ignitions.</span>
-            </h2>
-          </div>
-          <div className="max-w-md">
-             <p className="text-white/40 text-lg font-medium leading-relaxed">
-              We don&apos;t build for everyone. We build for the gaps. <br />
-              Our studio creates products that rethink categories.
-            </p>
-          </div>
+    <section id="ignitions" className="section-padding bg-white/[0.01]">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 md:mb-32">
+        <div className="space-y-4">
+          <span className="section-subtitle">The Portfolio</span>
+          <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+            Recent <br />
+            <span className="text-gradient-brain">Ignitions.</span>
+          </h2>
         </div>
+        <p className="text-white/40 text-lg md:text-xl max-w-md font-medium">
+          A small selection of the products we&apos;ve built, launched, and own. 
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Main Featured Card */}
-          <div className="lg:col-span-8 group relative overflow-hidden rounded-[3rem] glass-dark border border-white/5 hover:border-brain/20 transition-all duration-700 h-[500px] md:h-[650px]">
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
-            <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-1000">
-               {ignitions[0].image ? (
-                <Image 
-                  src={ignitions[0].image} 
-                  alt={ignitions[0].name} 
-                  fill 
-                  className="object-cover opacity-60 group-hover:opacity-80 transition-opacity" 
-                />
-               ) : (
-                <div className="w-full h-full bg-white/5" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        {apps.map((app, i) => (
+          <div key={i} className="glass-card group cursor-pointer flex flex-col p-6 md:p-8">
+            <div className="relative aspect-[16/10] mb-8 overflow-hidden rounded-[2rem]">
+               <div className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10`} />
+               <div className="absolute inset-0 bg-white/5 group-hover:bg-transparent transition-colors z-0" />
+               {app.image && (
+                 <Image 
+                   src={app.image}
+                   alt={app.title}
+                   fill
+                   className="object-cover group-hover:scale-105 transition-transform duration-1000 z-5"
+                 />
                )}
+               <div className="absolute top-6 right-6 z-20">
+                    <div className="h-12 w-12 rounded-full glass border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        <ArrowUpRight size={24} />
+                    </div>
+               </div>
             </div>
             
-            <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-20 space-y-4">
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brain bg-brain/10 px-4 py-1.5 rounded-full border border-brain/20">
-                {ignitions[0].tag}
-              </span>
-              <h3 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">{ignitions[0].name}</h3>
-              <p className="text-white/60 text-lg md:text-xl max-w-xl font-medium">
-                {ignitions[0].desc}
-              </p>
-              <div className="pt-6">
-                 <button className="flex items-center gap-3 text-white font-black uppercase tracking-[0.2em] text-xs group/btn">
-                    Launch Case Study <ArrowUpRight className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                 </button>
-              </div>
+            <div className="space-y-4 mt-auto">
+               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-spark">
+                 {app.category}
+               </span>
+               <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">
+                 {app.title}
+               </h3>
+               <p className="text-white/40 text-lg leading-relaxed font-medium group-hover:text-white/60 transition-colors">
+                 {app.desc}
+               </p>
             </div>
           </div>
+        ))}
+      </div>
 
-          {/* Side Cards Stack */}
-          <div className="lg:col-span-4 flex flex-col gap-8">
-            {ignitions.slice(1).map((app, i) => (
-              <div 
-                key={app.name}
-                className="flex-1 group relative overflow-hidden rounded-[2.5rem] glass-dark border border-white/5 hover:border-fuse/20 transition-all duration-700 p-8 flex flex-col justify-end min-h-[300px]"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${app.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                
-                <div className="relative z-10 space-y-4">
-                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-fuse">
-                    {app.tag}
-                  </span>
-                  <h3 className="text-3xl font-black uppercase italic tracking-tighter">{app.name}</h3>
-                  <p className="text-white/40 group-hover:text-white/60 transition-colors font-medium">
-                    {app.desc}
-                  </p>
-                  <div className="pt-4">
-                    <ArrowUpRight size={24} className="text-white/20 group-hover:text-white transition-colors" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        <div className="mt-20 flex justify-center">
-            <button className="btn-secondary px-12 italic uppercase tracking-widest text-xs font-black">
-              View All Ignitions
-            </button>
-        </div>
+      {/* View All Button */}
+      <div className="mt-20 flex justify-center">
+         <button className="btn-glass px-12 italic uppercase font-black tracking-widest">
+            Explore All Products
+         </button>
       </div>
     </section>
   );
 }
+
 

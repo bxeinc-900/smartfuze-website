@@ -1,110 +1,97 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
+
+const navLinks = [
+  { name: "Our Studio", href: "#studio" },
+  { name: "Ignitions", href: "#ignitions" },
+  { name: "The Process", href: "#process" },
+];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Our Apps", href: "#apps" },
-    { name: "Process", href: "#process" },
-    { name: "Studio", href: "#studio" },
-  ];
-
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? "glass-dark py-4" : "py-8"
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled ? "py-4 bg-black/40 backdrop-blur-xl border-b border-white/5" : "py-8 bg-transparent"
+    }`}>
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-4 hover:opacity-90 transition-all group">
-          <div className="relative w-10 h-10 md:w-12 md:h-12 drop-shadow-[0_0_10px_rgba(212,45,47,0.3)] group-hover:scale-110 transition-transform">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group z-50">
+          <div className="relative w-10 h-10 group-hover:scale-110 transition-transform duration-500">
             <Image
-              src="/assets/SmartFuze logo_02.png"
+              src="/assets/logo.png"
               alt="SmartFuze Logo"
               fill
               className="object-contain"
-              priority
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-black text-xl md:text-2xl tracking-tighter uppercase italic leading-[0.8]">SmartFuze</span>
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-spark leading-none mt-1">Studio</span>
+            <span className="font-black text-xl tracking-tighter uppercase italic leading-none">SmartFuze</span>
+            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-spark leading-none mt-1">Product Studio</span>
           </div>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-12">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-[11px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors relative group"
+              className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brain transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
-          <Link href="#contact" className="btn-secondary py-2.5 px-6 text-[11px] font-black tracking-[0.1em] flex items-center gap-2 group border-white/5 uppercase italic hover:border-brain/30">
-            Light the Fuze
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform text-fuse" />
+          <Link href="#contact" className="btn-primary !px-6 !py-3">
+            Get Ignited
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white p-2 glass rounded-lg"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden z-50 p-2 text-white/60 hover:text-white transition-colors"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black animate-in fade-in duration-300">
-          <div className="flex flex-col items-center justify-center h-full gap-12 p-8">
-             <button 
-              className="absolute top-8 right-8 text-white p-2 glass rounded-lg"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <X size={32} />
-            </button>
-
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                href={link.href}
-                className="text-4xl font-black uppercase italic tracking-tighter hover:text-brain transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-black/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center gap-12 transition-all duration-700 md:hidden ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        }`}>
+          {navLinks.map((link, i) => (
             <Link 
-              href="#contact" 
-              className="btn-brain w-full justify-center mt-8 text-xl italic uppercase font-black"
-              onClick={() => setIsMobileMenuOpen(false)}
+              key={link.name} 
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-black uppercase italic tracking-tighter hover:text-brain transition-colors"
+              style={{ transitionDelay: `${i * 100}ms` }}
             >
-              Light the Fuze
+              {link.name}
             </Link>
-          </div>
+          ))}
+          <Link 
+            href="#contact" 
+            onClick={() => setIsOpen(false)}
+            className="text-2xl font-black uppercase tracking-widest text-spark"
+          >
+            Get Ignited
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
+
 

@@ -40,7 +40,7 @@ SmartFuze is about:
 
 ## 🔥 Supporting Taglines
 
-- Lighting the fuze on the next big idea.
+- Lighting the fuze on the next smart idea.
 - Built to spark something bigger.
 - Smart ideas. Real execution.
 - From spark to product.
@@ -145,6 +145,15 @@ Variants:
 - Large typography
 - Generous spacing
 - Subtle motion (sparks, fuse animation)
+
+
+## 🧊 Glassmorphism
+
+SmartFuze uses glassmorphism to add depth and a modern, layered feel to the interface. Elements should appear like frosted glass floating over a dark background, using subtle transparency and blur.
+
+Glass components should primarily use soft white transparency, with accents from the SmartFuze color palette—brain red/pink for creativity and fuse orange/yellow for energy and ignition. These colors can be used for highlights, borders, or subtle glow effects.
+
+Glassmorphism should be used sparingly to highlight key elements like app cards, navigation, and interactive components. Always maintain strong contrast and readability, keeping the overall design clean, minimal, and intentional.
 
 Avoid:
 
