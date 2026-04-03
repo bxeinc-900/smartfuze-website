@@ -9,7 +9,7 @@ const apps = [
     title: "Celiac Scanner",
     category: "Health & Fitness",
     desc: "The only AI-powered digital guardian for gluten-free living. Cross-referencing 30+ medical authorities in real-time.",
-    image: "https://celiac-scanner-website.vercel.app/_next/image?url=%2Fmockups_person%2Fscanner.png&w=1080&q=75",
+    image: "/assets/scanner-mockup.png",
     color: "from-primary/20 to-transparent",
     href: "/celiac-scanner"
   },

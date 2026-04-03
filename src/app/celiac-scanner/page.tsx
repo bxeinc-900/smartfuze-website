@@ -51,7 +51,7 @@ export default function CeliacScanner() {
               <div className="relative aspect-[4/5] md:aspect-square group max-w-lg mx-auto">
                  <div className="absolute -inset-4 bg-gradient-to-tr from-primary/30 to-transparent blur-2xl rounded-full opacity-50" />
                  <Image 
-                   src="https://celiac-scanner-website.vercel.app/_next/image?url=%2Fmockups_person%2Fscanner.png&w=1080&q=75"
+                   src="/assets/scanner-mockup.png"
                    alt="Celiac Scanner Hero"
                    fill
                    className="object-contain"

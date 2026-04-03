@@ -2,11 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // unoptimized is required for Cloudflare Pages / edge runtime
     unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'celiac-scanner-website.vercel.app',
+        hostname: 'celiac-scanner.pages.dev',
       },
     ],
   },
