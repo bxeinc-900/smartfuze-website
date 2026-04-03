@@ -1,20 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   images: {
-    // unoptimized is required for Cloudflare Pages / edge runtime
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'celiac-scanner.pages.dev',
-      },
-    ],
   },
+  trailingSlash: true,
 };
 
 export default nextConfig;
 
-if (process.env.NODE_ENV === 'development') {
-  import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
-}
